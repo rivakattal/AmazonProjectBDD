@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 23, 2022 01:45:17 am</span></a>
+<a href="#"><span class="badge badge-primary">May 23, 2022 03:03:40 am</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 23, 2022 01:45:17 am</h3>
+<h3>May 23, 2022 03:03:40 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 23, 2022 01:45:28 am</h3>
+<h3>May 23, 2022 03:03:59 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,9 +148,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>9</b> steps passed</small></div>
+<div><small data-tooltip='87%'><b>7</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='12%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Validate Amazon Features":10.485
+"Validate Amazon Features":17.98
 };
 </script>
 <div class="row">
@@ -172,20 +177,20 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@Login_logoutFeature</td>
-<td>1</td>
+<td>@Amazonhome</td>
+<td>0</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
-<td>@Amazonhome</td>
-<td>1</td>
+<td>@SearchForMobileModule</td>
+<td>0</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -210,19 +215,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 9,
-failGrandChild: 0,
+passGrandChild: 7,
+failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
@@ -238,7 +243,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -246,31 +251,31 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Login_logoutFeature</a><a class="dropdown-item" href="#">@Amazonhome</a>
+<a class="dropdown-item" href="#">@Amazonhome</a><a class="dropdown-item" href="#">@SearchForMobileModule</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Validate Amazon Features</p>
             <p class="text-sm">
-              <span>01:45:18</span> / <span>00:00:10:485</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>03:03:41</span> / <span>00:00:17:980</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Validate Amazon Features</h5>
-<span class='badge badge-success'>05.23.2022 01:45:18</span>
-<span class='badge badge-danger'>05.23.2022 01:45:28</span>
-<span class='badge badge-default'>00:00:10:485</span>
+<h5 class="test-status text-fail">Validate Amazon Features</h5>
+<span class='badge badge-success'>05.23.2022 03:03:41</span>
+<span class='badge badge-danger'>05.23.2022 03:03:59</span>
+<span class='badge badge-default'>00:00:17:980</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -282,57 +287,68 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>logout feature</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Select the product and Get the Mobile price  and validate it</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
       </div>
     </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_mouse_hover_over_accounts_lists_section()">
-                <span>Given I mouse hover over Accounts & lists section</span>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Select the product and Get the Mobile price  and validate it</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given I want to validate that i am on Amazon home page</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_make_a_click_on_sign_in_button()">
-                <span>Then I make a click on Sign in button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I click on search box</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_see_text_box(java.lang.String)">
-                <span>Then I See "<Email>" text box</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I send "samsunggalaxys10" of mobile phone</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_click_on_continue_button()">
-                <span>Then I Click on continue button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click on search tab</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.iSeeField(java.lang.String)">
-                <span>Then I see"<password>" field</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I click on Mobile phone link</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_click_on_signin_button()">
-                <span>Then I click on Signin button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then i click on AddTO Cart tab</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_click_on_all_dropdown_button()">
-                <span>Then I click on ALL dropdown button</span>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then I Click on Proceed to checkout button</span>
       <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[Amazon Sign In]> but was:<[Select a shipping address]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepdef.WishliststepDef.i_click_on_proceed_to_checkout_button(WishliststepDef.java:181)
+	at ✽.I Click on Proceed to checkout button(file:///C:/AUTOMATION/WORKPLACE/final%20project/AmazonProjectBDD/src/test/resources/feature/AmazonTestValidation.feature:64)
+</textarea>
+      
       </div>
-              </div>
-              <div class="step pass-bg" title="stepdef.WishliststepDef.i_click_on_signout_button()">
-                <span>Then I click on signout button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>hooks.Hooks.Screenshotatfailedscenario(io.cucumber.java.Scenario)</span>
-      <div>logout_feature
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.Screenshotatfailedscenario(io.cucumber.java.Scenario)</span>
+      <div>Select_the_product_and_Get_the_Mobile_price__and_validate_it
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../embedded1.png' src="../embedded1.png">
     
@@ -340,8 +356,9 @@ eventsCount: 5,
 </div>
       <div>
       </div>
+                  </div>
               </div>
-          </div>
+            </div>
         </div>
   </div>
 </div>
@@ -367,15 +384,15 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">@Login_logoutFeature</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@Amazonhome</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Login_logoutFeature</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>@Amazonhome</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -386,13 +403,23 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>01:45:18 am</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:03:41 am</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>logout feature</a>
+<a href="#" class="linked" test-id='1' id='2'>Select the product and Get the Mobile price and validate it</a>
 <div class="">
-<span class="badge badge-default">Validate Amazon Features.logout feature</span>
+<span class="badge badge-default">Validate Amazon Features.Select the product and Get the Mobile price and validate it</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:03:41 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Select the product and Get the Mobile price and validate it</a>
+<div class="">
+<span class="badge badge-default">Validate Amazon Features.Select the product and Get the Mobile price and validate it</span>
 </div>
 </td>
 </tr>
@@ -403,15 +430,15 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>2</span>
 </span>
-<p class="name">@Amazonhome</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@SearchForMobileModule</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Amazonhome</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>@SearchForMobileModule</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -422,13 +449,75 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>01:45:18 am</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:03:41 am</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>logout feature</a>
+<a href="#" class="linked" test-id='1' id='2'>Select the product and Get the Mobile price and validate it</a>
 <div class="">
-<span class="badge badge-default">Validate Amazon Features.logout feature</span>
+<span class="badge badge-default">Validate Amazon Features.Select the product and Get the Mobile price and validate it</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:03:41 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Select the product and Get the Mobile price and validate it</a>
+<div class="">
+<span class="badge badge-default">Validate Amazon Features.Select the product and Get the Mobile price and validate it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:03:54 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Then I Click on Proceed to checkout button</a>
+<div class="">
+<span class="badge badge-default">Validate Amazon Features.Select the product and Get the Mobile price and validate it.Then I Click on Proceed to checkout button</span>
 </div>
 </td>
 </tr>

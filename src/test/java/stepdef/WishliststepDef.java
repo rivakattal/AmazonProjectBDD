@@ -98,15 +98,17 @@ public class WishliststepDef {
 	public void i_click_on_signin_button()  {
 	
 		wlAct.clickButton();
-	/*	try {
+		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String actualurl= DriverManager.getdriver().getCurrentUrl();
-		Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/gp/yourstore/home?path=%2Fgp%2Fyourstore%2Fhome&signIn=1&useRedirectOnSuccess=1&action=sign-out&ref_=nav_AccountFlyout_signout&"));
-		Reporter.log("This is expected url >> "+ actualurl);*/
+		String actulTitle= DriverManager.getdriver().getTitle();
+		 String expectedTitle= "Amazon.ca: Low Prices – Fast Shipping – Millions of Items";
+		
+		 Assert.assertEquals(actulTitle,expectedTitle);
+		 
 	}
 	
 	@Then("I clicked on Grocery button at top bar")
@@ -177,7 +179,7 @@ public class WishliststepDef {
 		 String expectedTitle= "Select a shipping address";
 		
 		 Assert.assertEquals(actulTitle,expectedTitle);
-		 
+		 Reporter.log("This is expected title >> "+ actulTitle );
 	}
 	
 	
@@ -268,7 +270,21 @@ public void i_send_of_mobile_phone(String string) {
 public void i_click_on_search_tab() {
 	
 	wlAct.clickFind();
+
+	/*
+	 * try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
    
+	String actulTitle= DriverManager.getdriver().getTitle();
+	 String expectedTitle= "Amazon.ca : samsung galaxy x10";
+	
+	 Assert.assertEquals(actulTitle,expectedTitle);
+	 */
+	
 }
 
 @Then("I click on Mobile phone link")
@@ -282,7 +298,18 @@ public void i_click_on_mobile_phone_link() {
 public void i_click_on_add_to_cart_tab() {
    
 	wlAct.clickaddButton();
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	
+	String actulTitle= DriverManager.getdriver().getTitle();
+	 String expectedTitle= "Amazon.ca Shopping Cart";
+	
+	 Assert.assertEquals(actulTitle,expectedTitle);
+	 
 }
 
 
@@ -295,7 +322,21 @@ public void i_click_on_add_to_cart_tab() {
 
 @Then("I click on signout button")
 public void i_click_on_signout_button() {
-   wlAct.clikSout();
+   
+	
+	wlAct.clikSout();
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	String actulTitle= DriverManager.getdriver().getTitle();
+	 String expectedTitle= "Amazon Sign In";
+	
+	 Assert.assertEquals(actulTitle,expectedTitle);
+	 Reporter.log("This is expected title >> "+ actulTitle );
+	 
 }
 
 
