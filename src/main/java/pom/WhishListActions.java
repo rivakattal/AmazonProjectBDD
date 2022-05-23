@@ -1,5 +1,6 @@
 package pom;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -78,6 +79,14 @@ public WebElement CartButton;
 @FindBy(xpath = "//*[@type='submit' and @class='a-button-input']")
 public WebElement ProceedToCheckout;
 
+@CacheLookup
+@FindBy(xpath="//div[@id='address-book-entry-0']//*[contains(text(),'Edit')]")
+public WebElement EditAddress;
+
+
+@CacheLookup
+@FindBy(xpath="(//*[@id='address-ui-widgets-enterAddressPostalCode' and @type='text'])")
+public WebElement Pcode;
 
 //////////New Release Locators>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -94,14 +103,20 @@ public WebElement NewRelease;
 
 @CacheLookup
 @FindBy(id="twotabsearchtextbox")
-public WebElement Sbox;
-
-
-
+public WebElement Searchbox;
 
 @CacheLookup
-@FindBy(id="twotabsearchtextbox")
-public WebElement TextBox;
+@FindBy(id="nav-search-submit-button")
+public WebElement FindButton;
+
+@CacheLookup
+@FindBy(xpath="//*[@class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']//*[contains(text(),'Samsung Galaxy S10 128GB Prism Black 8GB RAM Canadian Model G973W Unlocked ')]")
+public WebElement Mobile;
+
+@CacheLookup
+@FindBy(xpath="//*[@id='add-to-cart-button' and@type='submit']")
+public WebElement ADDToCart;
+
 
 ///////////////////////log out locators>>>>>>>>>>>
 @CacheLookup
@@ -113,46 +128,46 @@ common.Actions(Accounts);
 common.waitforElement(Accounts);
 }
 
-public void clickSigninButton() {
+public void clickSignin() {
 	clickelement(SigninButton);
 }
 
-public void sendkeysEmail(String emaildata ) {
+public void sendkeysEmailid(String emaildata ) {
 	sendkeys(Email, emaildata);
 }
 
 
-public void clickContinueButton() {
+public void clickContinue() {
 	clickelement(ContinueButton);
 }
-public void sendkeyspassword(String passworddata ) {
-	sendkeys(Password, passworddata);
+public void sendkeyspasswd(String passwordddata ) {
+	sendkeys(Password, passwordddata);
 }
 
 
-public void clickSignIn() {
+public void clickButton() {
 	clickelement(SignIn);
 }
 
-public void clickGrocery() {
+public void clickGroceryButton() {
 	clickelement(Grocery);
 }
 
 
-public void clickBestSeller() {
+public void clickBestSell() {
 	clickelement(BestSeller);
 }
 
-public void clickFirstimg() {
+public void clickImg() {
 	clickelement(Firstimg);
 }
 
-public void clickAddToWishList() {
+public void clickAddToWList() {
 	clickelement(AddToWishList);
 }
 
 
-public void clickViewWishList() {
+public void clickViewWList() {
 	clickelement(ViewWishList);
 }
 ///////Pay Module  Actions>>>>>>>>>>>>>>>>>>>>>>>
@@ -163,6 +178,20 @@ public void clickCart() {
 public void clickCheckout() {
 	clickelement(ProceedToCheckout);
 }
+
+public void clickEditButton() {
+	clickelement(EditAddress);
+}
+
+public void sendkeyspostalCD(String posteldata ) {
+	
+     Pcode.sendKeys(Keys.DELETE);
+	sendkeys(Pcode, posteldata);
+}
+public void clickaddButton() {
+	clickelement(ADDToCart);
+}
+
 ////////////New Release Actions >>>>>>>>>>>>>>>>>
 
 
@@ -180,18 +209,24 @@ public void clickNewRelease() {
 
 //////////////////////////////Mobile Search Actions>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
-public void clicktext1() {
-	clickelement(Sbox);
+public void clickTextbox() {
+	clickelement(Searchbox);
 }
 
-//reusable function of click and sendkeys
 
-//public void sendkeystext(String textdata) {
-//	sendkeys(TextBox, textdata);
-//}
+public void sendkeysTextbox(String searchdata) {
+	
+          sendkeys(Searchbox, searchdata);
+}
 
+public void clickFind() {
+	clickelement(FindButton);
+}
 
+public void clickMobilePhone() {
+	clickelement(Mobile);
+}
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Reusiable methods for click and send keys <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
 public void clickelement(WebElement ele) {
 	common.waitforElement(ele);
 	common.higlightement(ele);

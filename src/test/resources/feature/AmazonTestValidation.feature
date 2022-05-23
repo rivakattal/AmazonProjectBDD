@@ -14,7 +14,7 @@ Feature: 	Validate Amazon Features
     Then 	I make a click on Sign in button 
     Then  I See "<Email>" text box 
     Then 	I Click on continue button
-    Then  I see"<password>" field
+    Then  I see"<password>" field 
     Then 	I click on Signin button
     Then 	I clicked on Grocery button at top bar
     Then 	I click on best sellers
@@ -33,10 +33,16 @@ Feature: 	Validate Amazon Features
     Then 	I make a click on Sign in button 
     Then  I See "<Email>" text box 
     Then 	I Click on continue button
-    Then  I see"<password>" field
+    Then  I see"<password>" field button
     Then 	I click on Signin button
     Then I click on cart button
     Then I Click on Proceed to checkout button
+    Then I Click on Edit address tab
+    Then I enter new "<PostalCode>" to text box
+    
+     Examples:
+     |PostalCode   |
+     |L6R0L6 |
     
      @NewreleaseModule 
     Scenario: navigate New release Module and validate the page
@@ -50,19 +56,16 @@ Feature: 	Validate Amazon Features
     Scenario Outline: Select the product and Get the Mobile price  and validate it 
     
     Given I want to validate that i am on Amazon home page
-   Then  I See "<enterSearch>" text box
-    Then I click on search button
-    Then I see search results 
-    Then I click on phone
-    Then I highlight the price
-    Then I click on delivery location
-    Then I enter "<postalCode>"
-    Then   I click on search box
+    Then  I click on search box
+    And   I send "<searchKeys>" of mobile phone 
+    And   I click on search tab
+    Then  I click on Mobile phone link 
+    Then  i click on AddTO Cart tab
+    Then I Click on Proceed to checkout button
     
-    Examples:
-    
-    |  enterSearch  | postalCode  |
-    |  samsung galaxy s10 | N3T0P8 |  
+     Examples:
+     |searchKeys   |
+     |samsunggalaxys10|
     
     @Login_logoutFeature
     Scenario Outline:  logout feature

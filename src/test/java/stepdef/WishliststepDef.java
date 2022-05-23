@@ -33,12 +33,18 @@ public class WishliststepDef {
 	@Then("I make a click on Sign in button")
 	public void i_make_a_click_on_sign_in_button() {
 	   
-		wlAct.clickSigninButton();
-    /*  String actulTitle= DriverManager.getdriver().getTitle();
-      String expectedtitle="Sign in";
-      
-      Assert.assertTrue("this is not actual title", actulTitle.contains(expectedtitle));
-      */
+		wlAct.clickSignin();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actulTitle= DriverManager.getdriver().getTitle();
+		 String expectedTitle= "Amazon Sign In";
+		
+		 Assert.assertEquals(actulTitle,expectedTitle);
+		 
 		
 	    
 	}
@@ -48,89 +54,163 @@ public class WishliststepDef {
 	public void i_see_text_box(String string) {
 	   
 		
-		wlAct.sendkeysEmail("seemajoshi295@yahoo.com");
-		
-		/*  String actulTitle= DriverManager.getdriver().getTitle();
-	      String expectedtitle= "E-mail address or mobile phone number";
-	      
-	      Assert.assertTrue("this is not actual title", actulTitle.contains(expectedtitle));
-	      */
+		wlAct.sendkeysEmailid("seemajoshi295@yahoo.com");
+
 		
 	}
 	
 	@Then("I Click on continue button")
 	public void i_click_on_continue_button() {
-	   // wlAct.ContinueButton.getText();
-		wlAct.clickContinueButton();
-	/*	 String actulTitle= DriverManager.getdriver().getText();
-	      String expectedtitle=  "Continue";
-	      		
-	      
-	      Assert.assertTrue("this is not actual title", actulTitle.contains(expectedtitle));
-	      */
+	   
+		wlAct.clickContinue();
+		/*try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		 String actulText= wlAct.ContinueButton.getText();
+		 String expectedtext= "Continue";
 	
+		 Assert.assertEquals(actulText,expectedtext);
+	*/
 	}
 	
 	
-	@Then("I see\"Rocker22@\" field")
-	public void i_see_rocker22_field() {
-	    
-		wlAct.sendkeyspassword("Rocker22@");
-	}
+	@Then("^I see\"([^\"]*)\" field$")
+	public void iSeeField(String arg1)  {
 
+		wlAct.sendkeyspasswd("Rocker22@");
+	}
 	
-     @Then("I see\"<password>\" field")
-     public void i_see_password_field() {
+	
+	
+	
+	@Then("I see\"<password>\" field button")
+	public void i_see_password_field_button() {
 	    
-		wlAct.sendkeyspassword("Rocker22@");
+		wlAct.sendkeyspasswd("Rocker22@");
 	
      }
 	
 	@Then("I click on Signin button")
-	public void i_click_on_signin_button() {
+	public void i_click_on_signin_button()  {
 	
-		wlAct.clickSignIn();
+		wlAct.clickButton();
+	/*	try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actualurl= DriverManager.getdriver().getCurrentUrl();
+		Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/gp/yourstore/home?path=%2Fgp%2Fyourstore%2Fhome&signIn=1&useRedirectOnSuccess=1&action=sign-out&ref_=nav_AccountFlyout_signout&"));
+		Reporter.log("This is expected url >> "+ actualurl);*/
 	}
 	
 	@Then("I clicked on Grocery button at top bar")
 	public void i_clicked_on_grocery_button_at_top_bar() {
-	    wlAct.clickGrocery();
+	    wlAct.clickGroceryButton();
 	}
 	
 	@Then("I click on best sellers")
 	public void i_click_on_best_sellers() {
 	 
-		wlAct.clickBestSeller();
+		wlAct.clickBestSell();
 	}
 	
 	@Then("I clicked on first Img item")
 	public void i_clicked_on_first_img_item() {
 	    
-		wlAct.clickFirstimg();
+		wlAct.clickImg();
 	}
 	
 	@Then("I click on add to wish list item")
 	public void i_click_on_add_to_wish_list_item() {
 	   
-		wlAct.clickAddToWishList();
+		wlAct.clickAddToWList();
 	}
 	
 	@Then("i ckicked on viwe your list button")
-	public void i_ckicked_on_viwe_your_list_button() {
+	public void i_ckicked_on_viwe_your_list_button() throws Throwable {
 	    
-		wlAct.clickViewWishList();
+		wlAct.clickViewWList();
+		Thread.sleep(3000);
+		String actualurl= DriverManager.getdriver().getCurrentUrl();
+		Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/hz/wishlist/ls/1HFQKQPGEV7D2?ref_=wl_dp_view_your_list"));
+		Reporter.log("This is expected url >> "+ actualurl);
+		
 	}
 //  pay Module steps>>>>>>>>>>>>>>>>>>>
 	
 	@Then("I click on cart button")
 	public void i_click_on_cart_button() {
-	wlAct.clickCart();
+	
+		
+		wlAct.clickCart();
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		String actualurl= DriverManager.getdriver().getCurrentUrl();
+		Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/gp/cart/view.html?ref_=nav_cart"));
+		Reporter.log("This is expected url >> "+ actualurl);
+	
+	
 	}
 
 	@Then("I Click on Proceed to checkout button")
 	public void i_click_on_proceed_to_checkout_button() {
-	    wlAct.clickCheckout();
+	   
+		wlAct.clickCheckout();
+	    try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	    String actulTitle= DriverManager.getdriver().getTitle();
+		 String expectedTitle= "Select a shipping address";
+		
+		 Assert.assertEquals(actulTitle,expectedTitle);
+		 
 	}
+	
+	
+	@Then("I Click on Edit address tab")
+	public void i_click_on_edit_address_tab()  {
+	   
+		
+		wlAct.clickEditButton();
+	
+		/*   try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		String actulTitle= DriverManager.getdriver().getTitle();
+		 String expectedTitle= "Amazon.ca Checkout: Edit Address";
+		
+		 Assert.assertEquals(actulTitle,expectedTitle);
+*/		
+		
+	}
+	
+	@Then("I enter new {string} to text box")
+	public void i_enter_new_to_text_box(String string) {
+	   
+	
+		wlAct.sendkeyspostalCD("L6R0L6");
+		
+	}
+
+
+
 // New Release Steps >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	
@@ -147,58 +227,76 @@ public void i_click_on_all_dropdown_button() {
 public void i_click_on_new_release() {
     
 	wlAct.clickNewRelease();
-	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	String actualurl= DriverManager.getdriver().getCurrentUrl();
+	Assert.assertTrue("This is not correct url", actualurl.contains("https://www.amazon.ca/gp/new-releases/?ref_=nav_em_cs_newreleases_0_1_1_3"));
+	Reporter.log("This is expected url >> "+ actualurl);
 }
 
 
 //  <<<<<<<<<<<<Search for Mobile Module steps>>>>>>>>>>>>>>>>
 
-
-
 @Then("I click on search box")
 public void i_click_on_search_box() {
-    wlAct.clicktext1();
+ 
+wlAct.clickTextbox();		
+try {
+	Thread.sleep(3000);
+} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}	
 }
 
 
-@Then("I see search {string} textbox")
-public void i_see_search_textbox(String string) {
-   // wlAct.sendkeystext("samsung galaxy s10");
-}
 
-@Then("I click on search button")
-public void i_click_on_search_button() {
+@Then("I send {string} of mobile phone")
+public void i_send_of_mobile_phone(String string) {
     
+	
+	wlAct.sendkeysTextbox("samsunggalaxys10");
 }
 
-@Then("I see search results")
-public void i_see_search_results() {
+
+
+@Then("I click on search tab")
+public void i_click_on_search_tab() {
+	
+	wlAct.clickFind();
    
 }
 
-@Then("I click on phone")
-public void i_click_on_phone() {
+@Then("I click on Mobile phone link")
+public void i_click_on_mobile_phone_link() {
     
+	wlAct.clickMobilePhone();
+	
 }
 
-@Then("I highlight the price")
-public void i_highlight_the_price() {
-}
-
-@Then("I click on delivery location")
-public void i_click_on_delivery_location() {
+@Then("i click on AddTO Cart tab")
+public void i_click_on_add_to_cart_tab() {
    
+	wlAct.clickaddButton();
+	
 }
 
-@Then("I enter {string}")
-public void i_enter(String string) {
-    
-}
+
+
+
+
+
 //////////////logout step def>>>>>>>>>>>>>>>>>>
 
 
 @Then("I click on signout button")
 public void i_click_on_signout_button() {
-    
+   wlAct.clikSout();
 }
+
+
 }

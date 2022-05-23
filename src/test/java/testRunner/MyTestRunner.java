@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= {"src\\test\\resources\\feature\\Demo.feature"},
+		features= {"src\\test\\resources\\feature\\AmazonTestValidation.feature"},
 		glue= {"stepdef","hooks"},
-		tags= "@tag",
+		tags= " @Login_logoutFeature",
 		publish=true,
 		plugin= {"pretty","json:target/cucumber-reports/cucumber.json",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
